@@ -1,0 +1,58 @@
+@function pxToRem($size) {
+  @return $size / 16 * 1rem
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 4.444vw;
+}
+
+.Header {
+  height: pxToRem(40);
+  display: flex;
+  background-color: rgba(71, 192, 204, 0.38);
+  align-items: center;
+  padding: 0 pxToRem(20);
+  justify-content:space-between;
+}
+
+.SideBar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: pxToRem(300);
+  background-color: #eee;
+  transform: translateX(-100%);
+  transition: .6s linear;
+  &.isSidebarOpen{
+    transform: none;
+  }
+  .btnClose {
+    position: absolute;
+    top: pxToRem(15);
+    right: pxToRem(15);
+  }
+}
+.MainPopup{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: rgba(0,0,0,0.7);
+  color: #ffffff;
+  z-index: 1000;
+}
